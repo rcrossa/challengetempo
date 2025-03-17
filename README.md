@@ -1,0 +1,97 @@
+# Tempo Project
+
+## Description
+This project is a Spring Boot application that manages transactions. Below are the instructions to start the project and use Docker to run the database.
+
+## Requirements
+- Java 17 or higher
+- Maven 3.6.0 or higher
+- Docker
+
+## Configuration
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/your-repository.git
+    cd your-repository
+    ```
+
+2. Configure the environment variables in the `.env` file:
+    ```dotenv
+    DB_USER='postgres'
+    DB_PASSWORD='KPLwZLvPnJnIZVBVajurodrKDyXivoUe'
+    DB_DATABASE='tempo'
+    ```
+
+## Build and Run the Project
+
+1. Build the project with Maven:
+    ```bash
+    mvn clean install
+    ```
+
+2. Run the Spring Boot application:
+    ```bash
+    mvn spring-boot:run
+    ```
+
+The application will be available at `http://localhost:8080`.
+
+## Using Docker 
+
+1. Build the Docker image for the database:
+    ```bash
+    docker build -t tempo-db .
+    ```
+
+2. Run the Docker container for the database:
+    ```bash
+    docker run -d -p 5432:5432 --env-file .env tempo-db
+    ```
+  
+ 3. Run the Docker container for the api:
+    ```bash
+    docker build -t tempo-api .
+    docker run -d -p 8080:8080 --env-file .env tempo-api
+    ```
+
+## Database Setup
+
+Once the Docker container is running, follow these steps to set up the database and table:
+
+1. Access the running Docker container:
+    ```bash
+    docker exec -it <container_id> /bin/bash
+    ```
+
+2. Connect to the PostgreSQL database:
+    ```bash
+    psql -U postgres -d tempo
+    ```
+
+3. Create the `transactions` table:
+    ```sql
+    CREATE TABLE transactions (
+        id SERIAL PRIMARY KEY,
+        amount DECIMAL(10, 2) NOT NULL,
+        description VARCHAR(255),
+        transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    ```
+
+4. Verify the table creation:
+    ```sql
+    \dt
+    ```
+
+Replace `<container_id>` with the actual ID of your running Docker container. This will set up the necessary database and table for your application.
+
+## Endpoints
+
+- `GET /api/transactions` - Get all transactions
+- `GET /api/transactions/{id}` - Get a transaction by ID
+- `POST /api/transactions` - Create a new transaction
+- `PUT /api/transactions/{id}` - Update an existing transaction
+- `DELETE /api/transactions/{id}` - Delete a transaction
+
+## Contact
+For any inquiries, please contact [roberto.carlo.rossa@gmail.com](mailto:roberto.carlo.rossa@gmail.com).
