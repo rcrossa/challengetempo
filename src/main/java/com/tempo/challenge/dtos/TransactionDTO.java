@@ -3,8 +3,6 @@ package com.tempo.challenge.dtos;
 import com.tempo.challenge.validation.ValidString;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.Setter;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
