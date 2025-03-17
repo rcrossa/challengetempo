@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -51,10 +48,10 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorDetails> handleValidationExceptions(MethodArgumentNotValidException ex, WebRequest request) {
-        // Crear un StringBuilder para construir el mensaje
+
         StringBuilder validationErrors = new StringBuilder();
 
-        // Recorrer todos los FieldErrors y agregar los mensajes
+
         for (FieldError error : ex.getBindingResult().getFieldErrors()) {
             if (validationErrors.length() > 0) {
                 validationErrors.append(", ");
@@ -64,12 +61,12 @@ public class GlobalExceptionHandler {
                     .append(error.getDefaultMessage());
         }
 
-        // Si no se encontraron errores, establecemos un mensaje genérico
+
         if (validationErrors.length() == 0) {
             validationErrors.append("Validation failed, please check the input.");
         }
 
-        // Devolver los errores en un formato adecuado
+
         ErrorDetails errorDetails = new ErrorDetails(HttpStatus.BAD_REQUEST.value(), validationErrors.toString(), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }

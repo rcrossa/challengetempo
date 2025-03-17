@@ -4,7 +4,6 @@ import com.tempo.challenge.apiresponse.ApiResponse;
 import com.tempo.challenge.dtos.TransactionDTO;
 import com.tempo.challenge.service.TransactionService;
 import com.tempo.challenge.util.RateLimiter;
-import io.github.bucket4j.Bucket;
 import jakarta.servlet.http.HttpServletRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,8 +13,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -42,18 +39,7 @@ class TransactionControllerTest {
         MockitoAnnotations.openMocks(this);
     }
 
-//    @Test
-//    void getAllTransactions() {
-//        Bucket mockBucket = mock(Bucket.class);
-//        when(rateLimiter.getBucket(anyString())).thenReturn(mockBucket);
-//        when(mockBucket.tryConsume(1)).thenReturn(true);
-//        when(transactionService.getAllTransactions()).thenReturn(Collections.emptyList());
-//
-//        ResponseEntity<ApiResponse<List<TransactionDTO>>> response = transactionController.getAllTransactions(request);
-//
-//        assertEquals(HttpStatus.OK, response.getStatusCode());
-//        assertEquals(true, response.getBody().isSuccess());
-//    }
+
 
     @Test
     void getTransactionById() {
