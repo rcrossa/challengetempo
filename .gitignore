@@ -18,7 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
-
+.idea/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -31,3 +31,30 @@ build/
 
 ### VS Code ###
 .vscode/
+.history/
+# Archivos de logs
+*.log
+*.log.*
+
+# Archivos de configuración de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de compilación
+*.class
+*.jar
+*.war
+*.ear
+
+# Archivos de configuración de Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Archivos de configuración de Eclipse
+.cproject
+.settings/
+bin/
+tmp/
+
+.env
