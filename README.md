@@ -36,8 +36,28 @@ This project is a Spring Boot application that manages transactions. Below are t
 
 The application will be available at `http://localhost:8080`.
 
-## Using Docker 
+## Docker 
+### ATTENTION: Note on Docker Images
 
+The provided `Dockerfile` uses an image for ARM architecture (`arm64v8/openjdk:17-jdk-slim`). If you are using a different architecture, such as x86_64, you will need to modify the `Dockerfile` to use a compatible image. For example, you can replace the base image with `openjdk:17-jdk-slim` for x86_64 architecture.
+
+To determine your processor architecture, you can use the following command:
+
+### Using Docker
+
+There are two docker-compose files provided:  
+docker-compose.yml: This file sets up both the database and the API.
+docker-compose-db.yml: This file sets up only the database.
+
+To run both the database and the API, use the following command:
+
+```bash
+docker-compose -f docker-compose-db.yml up --build
+```
+
+```bash
+uname -m
+```
 1. Build the Docker image for the database:
     ```bash
     docker build -t tempo-db .
