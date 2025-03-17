@@ -1,5 +1,17 @@
 # Tempo Project
 
+
+## License and Disclaimer
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+### Disclaimer
+
+This software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+
+### Authorization
+
+Use of this software is permitted only with explicit authorization from the authors. Unauthorized use is strictly prohibited.
 ## Description
 This project is a Spring Boot application that manages transactions. Below are the instructions to start the project and use Docker to run the database.
 
