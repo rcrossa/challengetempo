@@ -1,1 +1,23 @@
 target/*.original
+# Maven target directory
+target/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+*.tmp
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
