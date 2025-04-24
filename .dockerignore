@@ -1,6 +1,5 @@
 target/*.original
-# Maven target directory
-target/
+
 
 # IntelliJ IDEA project files
 .idea/

@@ -27,7 +27,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_DATABASE: ${DB_DATABASE}
     ports:
-      - "8080:8080"
+      - "8090:8090"
     networks:
       - app_network
 
