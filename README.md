@@ -30,7 +30,7 @@ This project is a Spring Boot application that manages transactions. Below are t
 2. Configure the environment variables in the `.env` file:
     ```dotenv
     DB_USER='postgres'
-    DB_PASSWORD='KPLwZLvPnJnIZVBVajurodrKDyXivoUe'
+    DB_PASSWORD='<your_password>'
     DB_DATABASE='tempo'
     ```
 
