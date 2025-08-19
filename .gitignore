@@ -62,4 +62,4 @@ tmp/
 # SonarQube
 
 /src/main/resources/sonar-auth.properties
-/src/main/resources/sonar-project.properties
+sonar-project.properties
