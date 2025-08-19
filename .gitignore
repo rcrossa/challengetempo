@@ -58,3 +58,7 @@ bin/
 tmp/
 
 .env
+
+# SonarQube
+sonar-project.properties
+sonar-auto.properties
