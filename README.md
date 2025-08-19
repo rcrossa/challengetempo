@@ -32,6 +32,7 @@ This project is a Spring Boot application that manages transactions. Below are t
     DB_USER='postgres'
     DB_PASSWORD='<your_password>'
     DB_DATABASE='tempo'
+    SONAR_TOKEN='your_sonar_token_here'
     ```
 
 ## Build and Run the Project
@@ -125,5 +126,32 @@ Replace `<container_id>` with the actual ID of your running Docker container. Th
 - `PUT /api/transactions/{id}` - Update an existing transaction
 - `DELETE /api/transactions/{id}` - Delete a transaction
 
-## Contact
-For any inquiries, please contact [roberto.carlo.rossa@gmail.com](mailto:roberto.carlo.rossa@gmail.com).
+## Testing
+
+By default, tests use an in-memory H2 database.  
+No PostgreSQL instance or environment variables are required for running tests.
+
+To run tests:
+```bash
+mvn clean test
+```
+
+If you want to run tests against PostgreSQL, remove or adjust the `@ActiveProfiles("test")` annotation in `ChallengeApplicationTests.java`.
+
+## SonarQube Analysis
+
+To run SonarQube analysis, make sure you have:
+1. SonarQube server running on `http://localhost:9000`
+2. `SONAR_TOKEN` configured in your `.env` file or as environment variable
+
+Run the analysis with:
+```bash
+mvn clean test sonar:sonar -Dsonar.token=${SONAR_TOKEN}
+```
+
+Or set the token directly:
+```bash
+mvn clean test sonar:sonar -Dsonar.token=your_token_here
+```
+
+The SonarQube configuration is defined in `sonar-project.properties` file.

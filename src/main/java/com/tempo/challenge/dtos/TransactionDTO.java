@@ -9,9 +9,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
+@Builder
 @Entity
 @NoArgsConstructor
-@Builder
 @AllArgsConstructor
 @Table(name = "transactions")
 public class TransactionDTO {

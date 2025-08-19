@@ -6,6 +6,7 @@ public class ValidStringValidator implements ConstraintValidator<ValidString, St
 
     @Override
     public void initialize(ValidString constraintAnnotation) {
+        // No initialization required - this validator doesn't need any configuration from the annotation
     }
 
     @Override
