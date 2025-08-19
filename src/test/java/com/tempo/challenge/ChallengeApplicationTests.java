@@ -1,16 +1,16 @@
 package com.tempo.challenge;
 
-import com.tempo.challenge.config.TestDotEnvConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
+import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@Import(TestDotEnvConfig.class)
+@ActiveProfiles("test")
 class ChallengeApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// Test that the application context loads successfully
 	}
 
 }
